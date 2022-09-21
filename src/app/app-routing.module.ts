@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { SensorManagementComponent } from './modules/sensorManagement/sensorManagement.component';
 import { SystemManagementComponent } from './modules/systemManagement/systemManagement.component';
+import { TagBindEntityComponent } from './modules/tagBindEntity/tagBindEntity.component';
 import { TagManagementComponent } from './modules/tagManagement/tagManagement.component';
 
 const routes: Routes = [
@@ -21,6 +22,10 @@ const routes: Routes = [
     {
         path: 'sensor_management',
         component: SensorManagementComponent
+    },
+    {
+        path: 'tag_bind_entity',
+        component: TagBindEntityComponent
     }
 ];
 

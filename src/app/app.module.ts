@@ -12,9 +12,10 @@ import { TagManagementComponent } from './modules/tagManagement/tagManagement.co
 import { SystemManagementComponent } from './modules/systemManagement/systemManagement.component';
 import { QRCodeModule } from 'angular2-qrcode';
 import { SensorManagementComponent } from './modules/sensorManagement/sensorManagement.component';
+import { TagBindEntityComponent } from './modules/tagBindEntity/tagBindEntity.component';
 
 @NgModule({
-    declarations: [AppComponent, HomeComponent, TagManagementComponent, SystemManagementComponent, SensorManagementComponent],
+    declarations: [AppComponent, HomeComponent, TagManagementComponent, SystemManagementComponent, SensorManagementComponent, TagBindEntityComponent],
     imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule, BrowserAnimationsModule, HttpClientModule, QRCodeModule],
     providers: [],
     bootstrap: [AppComponent]

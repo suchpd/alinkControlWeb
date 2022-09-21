@@ -16,7 +16,7 @@
         <div class="title">状态查询</div>
         <div>
             <input type="text" name="dev" [(ngModel)]="devId" />
-            <button (click)="getBindStatus()">查询</button>
+            <button (click)="getBindStatus()" style="height: 30px; width: 50px; padding: 0">查询</button>
 
             <div *ngIf="bindStatus.dev != null" class="tag-status">
                 <div style="display: flex">

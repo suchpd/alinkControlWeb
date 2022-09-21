@@ -1,0 +1,31 @@
+<div class="scope">
+    <div class="title">绑定/解绑</div>
+    <div class="tag-row">
+        <label>标签Id:</label>
+        <input type="text" [(ngModel)]="bindStatus.dev" />
+    </div>
+    <div class="tag-row">
+        <label>标签类型Id:</label>
+        <input type="text" [(ngModel)]="bindStatus.id" />
+    </div>
+    <div class="tag-row">
+        <label>绑定实体Id:</label>
+        <input type="text" [(ngModel)]="bindStatus.bindId" />
+    </div>
+    <div class="tag-row">
+        <label>绑定实体名称:</label>
+        <input type="text" [(ngModel)]="bindStatus.bindName" />
+    </div>
+    <div class="tag-row">
+        <label>标签可在区域Id:</label>
+        <input type="text" [(ngModel)]="bindStatus.acceptedRegion" />
+    </div>
+    <div class="tag-row">
+        <label>标签禁止区域Id:</label>
+        <input type="text" [(ngModel)]="bindStatus.forbiddenRegion" />
+    </div>
+    <div class="tag-row button-row">
+        <button (click)="bind()">绑定</button>
+        <button (click)="unbind()">解绑</button>
+    </div>
+</div>

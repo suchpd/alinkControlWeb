@@ -26,9 +26,10 @@ export class TagManagementComponent implements OnInit {
         this.alinkService.getBindStatus({ dev: this.devId }).subscribe((res) => {
             this.bindStatus = res.data;
             this.qrCodeValue = JSON.stringify(res.data);
+            console.log(res.data);
 
             // this.qrCodeValue = '标签Id：' + res.data.dev + '\n' + '换行';
-            // this.qrCodeValue = 'http://www.baidu.com';
+            this.qrCodeValue = 'http://192.168.137.249:4200/tag_bind_entity?showTab=false&dev=' + this.devId;
         });
     }
 

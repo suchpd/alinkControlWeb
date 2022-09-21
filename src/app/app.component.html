@@ -1,6 +1,6 @@
 <div class="wrapper">
-    <h1 class="title">Alink Control</h1>
-    <nav>
+    <h1 class="title" *ngIf="showTab">Alink Control</h1>
+    <nav *ngIf="showTab">
         <a routerLink="/tag_management" routerLinkActive="active" ariaCurrentWhenActive="page">信息录入</a>
         <a routerLink="/system_management" routerLinkActive="active" ariaCurrentWhenActive="page">系统管理</a>
         <a routerLink="/sensor_management" routerLinkActive="active" ariaCurrentWhenActive="page">传感器信息查询</a>

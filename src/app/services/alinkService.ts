@@ -10,4 +10,12 @@ export class AlinkService {
     getBindStatus(params: any) {
         return this.apiService.get(`logistics/getBindStatus`, params);
     }
+
+    bind(params: any) {
+        return this.apiService.post('logistics/bind', params);
+    }
+
+    unbind(dev: string) {
+        return this.apiService.get(`logistics/unbind?dev=${dev}`);
+    }
 }

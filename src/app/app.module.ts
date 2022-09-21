@@ -10,10 +10,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { TagManagementComponent } from './modules/tagManagement/tagManagement.component';
 import { SystemManagementComponent } from './modules/systemManagement/systemManagement.component';
+import { QRCodeModule } from 'angular2-qrcode';
+import { SensorManagementComponent } from './modules/sensorManagement/sensorManagement.component';
 
 @NgModule({
-    declarations: [AppComponent, HomeComponent, TagManagementComponent, SystemManagementComponent],
-    imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule, BrowserAnimationsModule, HttpClientModule],
+    declarations: [AppComponent, HomeComponent, TagManagementComponent, SystemManagementComponent, SensorManagementComponent],
+    imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule, BrowserAnimationsModule, HttpClientModule, QRCodeModule],
     providers: [],
     bootstrap: [AppComponent]
 })

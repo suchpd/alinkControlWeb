@@ -18,7 +18,7 @@
             <input type="text" name="dev" [(ngModel)]="devId" />
             <button (click)="getBindStatus()">查询</button>
 
-            <div *ngIf="bindStatus.dev != null">
+            <div *ngIf="bindStatus.dev != null" class="tag-status">
                 <div style="display: flex">
                     <label for="">绑定标签Id:</label>
                     <div>{{ bindStatus.bindId }}</div>
@@ -43,6 +43,8 @@
                     <label for="">禁入区域Id:</label>
                     <div>{{ bindStatus.forbiddenRegion }}</div>
                 </div>
+
+                <qr-code [value]="qrCodeValue" [size]="200"></qr-code>
             </div>
         </div>
     </div>

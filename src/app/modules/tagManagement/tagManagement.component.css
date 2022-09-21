@@ -14,12 +14,12 @@
     align-items: center;
 }
 
-.panel > div {
-    width: 100%;
-}
-
 .panel :nth-child(n + 2) {
     padding: 8px;
+}
+
+.panel > div {
+    width: 100%;
 }
 
 .panel .title {
@@ -27,4 +27,17 @@
     height: 40px;
     background-color: rgb(197, 202, 202);
     text-align: center;
+}
+
+.tag-status {
+    margin-top: 16px;
+}
+
+.tag-status :nth-child(n) {
+    padding: 0 !important;
+    margin-right: 8px;
+}
+
+input {
+    margin-right: 12px;
 }

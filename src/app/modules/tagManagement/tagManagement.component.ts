@@ -12,6 +12,7 @@ export class TagManagementComponent implements OnInit {
     devs: any;
     status: any = '1';
     bindStatus: any = {};
+    qrCodeValue: string = '';
     constructor(public toastService: ToastService, public alinkService: AlinkService) {}
 
     ngOnInit() {}
@@ -24,6 +25,10 @@ export class TagManagementComponent implements OnInit {
 
         this.alinkService.getBindStatus({ dev: this.devId }).subscribe((res) => {
             this.bindStatus = res.data;
+            this.qrCodeValue = JSON.stringify(res.data);
+
+            // this.qrCodeValue = '标签Id：' + res.data.dev + '\n' + '换行';
+            // this.qrCodeValue = 'http://www.baidu.com';
         });
     }
 

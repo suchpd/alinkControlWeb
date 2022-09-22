@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MessageService } from 'primeng/api';
+import { ToastProxyComponent } from 'src/app/components/toastProxy/toastProxy.component';
 import { AlinkService } from 'src/app/services/alinkService';
 
 @Component({
     selector: 'app-tagBindEntity',
     templateUrl: './tagBindEntity.component.html',
-    styleUrls: ['./tagBindEntity.component.css'],
-    providers: [MessageService]
+    styleUrls: ['./tagBindEntity.component.css']
 })
 export class TagBindEntityComponent implements OnInit {
     bindStatus: any = {};
     dev: string = '';
-    constructor(public alinkService: AlinkService, private route: ActivatedRoute, private messageService: MessageService) {
+    constructor(public alinkService: AlinkService, private route: ActivatedRoute, private toastProxy: ToastProxyComponent) {
         this.route.queryParams.subscribe((queryParams) => {
             let data = queryParams['dev'];
             if (data) {
@@ -27,7 +27,7 @@ export class TagBindEntityComponent implements OnInit {
 
     getBindStatus() {
         if (this.dev == null || this.dev == '') {
-            this.messageService.add({ severity: 'error', summary: 'Error', detail: '请输入标签Id' });
+            this.toastProxy.showError('请输入标签Id');
             return;
         }
 
@@ -38,19 +38,19 @@ export class TagBindEntityComponent implements OnInit {
 
     bind() {
         if (this.bindStatus.dev == null || this.bindStatus.dev == '') {
-            this.messageService.add({ severity: 'error', summary: 'Error', detail: '请输入标签Id' });
+            this.toastProxy.showError('请输入标签Id');
             return;
         }
         let command = { ...this.bindStatus };
         command.devType = command.id;
         this.alinkService.bind(command).subscribe((res) => {
-            this.messageService.add({ severity: 'success', summary: 'success', detail: '绑定成功！' });
+            this.toastProxy.showSuccess('绑定成功！');
         });
     }
 
     unbind() {
         this.alinkService.unbind(this.dev).subscribe((res) => {
-            this.messageService.add({ severity: 'success', summary: 'success', detail: '解除绑定成功！' });
+            this.toastProxy.showSuccess('解除绑定成功！');
         });
     }
 }

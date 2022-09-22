@@ -15,11 +15,12 @@ import { SensorManagementComponent } from './modules/sensorManagement/sensorMana
 import { TagBindEntityComponent } from './modules/tagBindEntity/tagBindEntity.component';
 import { ToastModule } from 'primeng/toast';
 import { ToastProxyComponent } from './components/toastProxy/toastProxy.component';
+import { MessageService } from 'primeng/api';
 
 @NgModule({
     declarations: [AppComponent, HomeComponent, TagManagementComponent, SystemManagementComponent, SensorManagementComponent, TagBindEntityComponent],
     imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule, BrowserAnimationsModule, HttpClientModule, QRCodeModule, ToastModule],
-    providers: [],
+    providers: [MessageService],
     bootstrap: [AppComponent]
 })
 export class AppModule {}

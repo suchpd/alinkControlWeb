@@ -7,8 +7,7 @@ import { AlinkService } from 'src/app/services/alinkService';
 @Component({
     selector: 'app-tagManagement',
     templateUrl: './tagManagement.component.html',
-    styleUrls: ['./tagManagement.component.css'],
-    providers: [MessageService]
+    styleUrls: ['./tagManagement.component.css']
 })
 export class TagManagementComponent implements OnInit {
     devId: any;
@@ -16,18 +15,13 @@ export class TagManagementComponent implements OnInit {
     status: any = '1';
     bindStatus: any = {};
     qrCodeValue: string = '';
-    constructor(
-        public toastService: ToastService,
-        public alinkService: AlinkService,
-        private messageService: MessageService
-    ) // private toastProxy: ToastProxyComponent
-    {}
+    constructor(public toastService: ToastService, public alinkService: AlinkService, private toastProxy: ToastProxyComponent) {}
 
     ngOnInit() {}
 
     getBindStatus() {
         if (this.devId == null || this.devId == '') {
-            this.messageService.add({ severity: 'error', summary: 'Error', detail: '请输入标签Id' });
+            this.toastProxy.showError('请输入标签Id');
             return;
         }
 

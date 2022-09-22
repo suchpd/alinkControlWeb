@@ -11,7 +11,7 @@ export class ApiService {
     };
     constructor(private http: HttpClient) {
         this.environment = {
-            apiUrl: 'http://192.168.137.249:8080/'
+            apiUrl: 'http://alinkAPi.frp.xama.vip/'
         };
     }
 

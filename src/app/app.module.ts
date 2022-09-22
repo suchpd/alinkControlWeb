@@ -13,10 +13,12 @@ import { SystemManagementComponent } from './modules/systemManagement/systemMana
 import { QRCodeModule } from 'angular2-qrcode';
 import { SensorManagementComponent } from './modules/sensorManagement/sensorManagement.component';
 import { TagBindEntityComponent } from './modules/tagBindEntity/tagBindEntity.component';
+import { ToastModule } from 'primeng/toast';
+import { ToastProxyComponent } from './components/toastProxy/toastProxy.component';
 
 @NgModule({
     declarations: [AppComponent, HomeComponent, TagManagementComponent, SystemManagementComponent, SensorManagementComponent, TagBindEntityComponent],
-    imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule, BrowserAnimationsModule, HttpClientModule, QRCodeModule],
+    imports: [BrowserModule, AppRoutingModule, NgbModule, FormsModule, BrowserAnimationsModule, HttpClientModule, QRCodeModule, ToastModule],
     providers: [],
     bootstrap: [AppComponent]
 })
